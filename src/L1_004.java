@@ -38,7 +38,7 @@ public class L1_004 implements InputOutputAlgorithm {
         }
 
         @Override
-        public String[] setTestCases() {
+        protected String[] setTestCases() {
             return new String[]{"150"};
         }
 
