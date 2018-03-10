@@ -1,8 +1,9 @@
+import java.io.InputStream;
 import java.util.*;
 
-public class L1_034 {
+public class L1_034 implements InputOutputAlgorithm {
 
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     private int[] store = new int[1000 + 1];
 
@@ -10,7 +11,9 @@ public class L1_034 {
 
     private int answerTimes;
 
-    void input() {
+    @Override
+    public void input(final InputStream stream) {
+        this.scanner = new Scanner(stream);
         final int inputSize = scanner.nextInt();
         for (int i = 0; i < inputSize; i++) {
             inputLine();
@@ -25,12 +28,13 @@ public class L1_034 {
         }
     }
 
-    void solve() {
+    @Override
+    public void solve() {
         int maxIndex = 0, maxTimes = 0;
         /*找出最大项*/
         for (int i = 0; i < store.length; i++) {
             int value = store[i];
-            if (value >= maxTimes){
+            if (value >= maxTimes) {
                 maxIndex = i;
                 maxTimes = value;
             }
@@ -42,53 +46,47 @@ public class L1_034 {
         }
     }
 
-    void output() {
+    @Override
+    public void output() {
         System.out.format("%d %d", answerIndex, answerTimes);
         System.out.println();
+    }
+
+    @Override
+    public void run() {
+
     }
 
 
     public static void main(String[] args) {
         L1_034 main = new L1_034();
 
-        main.input();
+        main.input(System.in);
         main.solve();
         main.output();
     }
-}
 
-class L1_034Test extends TestAlgorithm {
 
-    private L1_034 main = new L1_034();
+    static class L1_034Test extends TestAlgorithm {
 
-    @Override
-    protected String[] setTest() {
-        return new String[]{
-            "4\n"
-                + "3 889 233 2\n"
-                + "5 100 3 233 2 73\n"
-                + "4 3 73 889 2\n"
-                + "2 233 123"
-        };
+        private L1_034Test() {
+            super(new L1_034());
+        }
+
+        @Override
+        public String[] setTestCases() {
+            return new String[]{
+                "4\n"
+                    + "3 889 233 2\n"
+                    + "5 100 3 233 2 73\n"
+                    + "4 3 73 889 2\n"
+                    + "2 233 123"
+            };
+        }
+
+        public static void main(String[] args) {
+            new L1_034Test().test();
+        }
     }
 
-    @Override
-    public void input(final Scanner scanner) {
-        main.scanner = scanner;
-        main.input();
-    }
-
-    @Override
-    public void solve() {
-        main.solve();
-    }
-
-    @Override
-    public void output() {
-        main.output();
-    }
-
-    public static void main(String[] args) {
-        new L1_034Test().test();
-    }
 }
