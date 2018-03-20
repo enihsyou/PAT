@@ -1,7 +1,7 @@
 import java.io.InputStream;
 import java.util.*;
 
-public class L1_034 implements InputOutputAlgorithm {
+public class L1_034 extends TestAlgorithm {
 
     private Scanner scanner;
 
@@ -57,6 +57,16 @@ public class L1_034 implements InputOutputAlgorithm {
 
     }
 
+    @Override
+    public String[] setTestCases() {
+        return new String[]{
+            "4\n"
+            + "3 889 233 2\n"
+            + "5 100 3 233 2 73\n"
+            + "4 3 73 889 2\n"
+            + "2 233 123"
+        };
+    }
 
     public static void main(String[] args) {
         L1_034 main = new L1_034();
@@ -65,28 +75,4 @@ public class L1_034 implements InputOutputAlgorithm {
         main.solve();
         main.output();
     }
-
-
-    static class L1_034Test extends TestAlgorithm {
-
-        private L1_034Test() {
-            super(new L1_034());
-        }
-
-        @Override
-        public String[] setTestCases() {
-            return new String[]{
-                "4\n"
-                    + "3 889 233 2\n"
-                    + "5 100 3 233 2 73\n"
-                    + "4 3 73 889 2\n"
-                    + "2 233 123"
-            };
-        }
-
-        public static void main(String[] args) {
-            new L1_034Test().test();
-        }
-    }
-
 }

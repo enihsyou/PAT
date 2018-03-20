@@ -3,15 +3,15 @@ import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 
 /** 实现这个类以构造测试用例 */
-public abstract class TestAlgorithm {
+public abstract class TestAlgorithm implements InputOutputAlgorithm{
 
     private static final int DELIMITER_LENGTH = 80;
 
     /** 需要测试的算法 */
     private InputOutputAlgorithm main;
 
-    public TestAlgorithm(final InputOutputAlgorithm main) {
-        this.main = main;
+    public TestAlgorithm() {
+        this.main = this;
     }
 
     public void test() {

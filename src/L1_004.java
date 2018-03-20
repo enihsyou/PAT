@@ -1,7 +1,7 @@
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class L1_004 implements InputOutputAlgorithm {
+public class L1_004 extends TestAlgorithm {
 
     private int inputF;
 
@@ -30,25 +30,9 @@ public class L1_004 implements InputOutputAlgorithm {
         output();
     }
 
-
-    static class L1_004Test extends TestAlgorithm {
-
-        public L1_004Test() {
-            super(new L1_004());
-        }
-
-        @Override
-        protected String[] setTestCases() {
-            return new String[]{"150"};
-        }
-
-        public static void main(String[] args) {
-            new L1_004Test().test();
-        }
-    }
-
-    public static void main(String[] args) {
-        new L1_004().run();
+    @Override
+    protected String[] setTestCases() {
+        return new String[]{"150"};
     }
 }
 
