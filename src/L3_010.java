@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main {
+public class L3_010 extends TestAlgorithm {
 
     private int inputSize;
 
@@ -99,6 +99,7 @@ public class Main {
 
     }
 
+    @Override
     public void input(final InputStream stream) {
         Scanner scanner = new Scanner(stream);
         tree = new BinaryTree();
@@ -107,10 +108,13 @@ public class Main {
             tree.add(scanner.nextInt());
         }
     }
+
+    @Override
     public void solve() {
 
     }
 
+    @Override
     public void output() {
         tree.print();
         if (tree.isComplete) {
@@ -120,14 +124,24 @@ public class Main {
         }
     }
 
+    @Override
     public void run() {
         input(System.in);
         solve();
         output();
     }
 
+    @Override
+    protected String[] setTestCases() {
+        return new String[]{
+            "9\n" +
+            "38 45 42 24 58 30 67 12 51",
+            "8\n" +
+            "38 24 12 45 58 67 42 51"
+        };
+    }
 
     public static void main(String[] args) {
-        new Main().run();
+        new L3_010().test();
     }
 }
