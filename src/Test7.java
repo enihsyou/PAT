@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Main {
+public class Test7 extends TestAlgorithm {
 
     private HashMap<String, Node> nodes;
 
@@ -16,6 +16,7 @@ public class Main {
 
     private String startAddress;
 
+    @Override
     protected String[] setTestCases() {
         return new String[]{
             "00100 5\n" +
@@ -47,6 +48,7 @@ public class Main {
         }
     }
 
+    @Override
     public void input(final InputStream stream) {
         final Scanner scanner = new Scanner(stream);
         startAddress = scanner.next("\\d+");
@@ -64,6 +66,8 @@ public class Main {
         }
     }
 
+
+    @Override
     public void solve() {
         String currentAddress = startAddress;
         while (!"-1".equals(currentAddress)) {
@@ -71,12 +75,11 @@ public class Main {
             final Node node = nodes.get(currentAddress);
             if (mainListValue.contains(Math.abs(node.value))) {
                 addToDelete(node);
-                currentAddress = node.next;
             } else {
                 addToMain(node);
-                currentAddress = node.next;
                 mainListValue.add(Math.abs(node.value));
             }
+            currentAddress = node.next;
         }
     }
 
@@ -102,11 +105,13 @@ public class Main {
     }
 
 
+    @Override
     public void output() {
         mainList.forEach(System.out::println);
         deletedList.forEach(System.out::println);
     }
 
+    @Override
     public void run() {
         input(System.in);
         solve();
@@ -114,6 +119,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Main().run();
+        new Test7().test();
+        // new Test6().run();
     }
 }
