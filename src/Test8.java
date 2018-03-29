@@ -1,6 +1,5 @@
 import java.io.InputStream;
 import java.util.Scanner;
-import java.util.stream.DoubleStream;
 
 public class Test8 extends TestAlgorithm {
 
@@ -57,7 +56,7 @@ public class Test8 extends TestAlgorithm {
 
     @Override
     public void output() {
-        System.out.println((int) DoubleStream.of(powers).sum());
+        // System.out.println((int) DoubleStream.of(powers).sum());
     }
 
     @Override

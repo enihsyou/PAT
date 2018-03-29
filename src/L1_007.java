@@ -58,10 +58,15 @@ public class L1_007 extends TestAlgorithm {
     public String[] setTestCases() {
         return new String[]{
             "-600",
+            "1234",
             "10",
             "0",
             "1",
             "-1"
         };
+    }
+
+    public static void main(String[] args) {
+        new L1_007().test();
     }
 }

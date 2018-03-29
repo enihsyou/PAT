@@ -53,10 +53,10 @@ public class Test7 extends TestAlgorithm {
         final Scanner scanner = new Scanner(stream);
         startAddress = scanner.next("\\d+");
         final int size = scanner.nextInt();
-        nodes = new HashMap<>(size);
-        mainList = new LinkedList<>();
-        mainListValue = new ArrayList<>();
-        deletedList = new LinkedList<>();
+        // nodes = new HashMap<>(size);
+        // mainList = new LinkedList<>();
+        // mainListValue = new ArrayList<>();
+        // deletedList = new LinkedList<>();
         for (int i = 0; i < size; i++) {
             final String address = scanner.next();
             final int value = scanner.nextInt();
@@ -107,8 +107,8 @@ public class Test7 extends TestAlgorithm {
 
     @Override
     public void output() {
-        mainList.forEach(System.out::println);
-        deletedList.forEach(System.out::println);
+        // mainList.forEach(System.out::println);
+        // deletedList.forEach(System.out::println);
     }
 
     @Override

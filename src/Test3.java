@@ -26,9 +26,9 @@ public class Test3 extends TestAlgorithm {
     @Override
     public void input(final InputStream stream) {
         final Scanner scanner = new Scanner(stream);
-        table = new StringBuilder(scanner.nextLine()).reverse().chars().map(operand -> operand - '0').toArray();
-        adder1 = new StringBuilder(scanner.nextLine()).reverse().chars().map(operand -> operand - '0').toArray();
-        adder2 = new StringBuilder(scanner.nextLine()).reverse().chars().map(operand -> operand - '0').toArray();
+        // table = new StringBuilder(scanner.nextLine()).reverse().chars().map(operand -> operand - '0').toArray();
+        // adder1 = new StringBuilder(scanner.nextLine()).reverse().chars().map(operand -> operand - '0').toArray();
+        // adder2 = new StringBuilder(scanner.nextLine()).reverse().chars().map(operand -> operand - '0').toArray();
         result = new StringBuilder();
     }
 
