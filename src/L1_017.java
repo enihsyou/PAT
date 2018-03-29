@@ -1,7 +1,7 @@
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class L1_016 extends TestAlgorithm {
+public class L1_017 extends TestAlgorithm {
 
     private static int[] weights = new int[]{
         7,
@@ -93,6 +93,6 @@ public class L1_016 extends TestAlgorithm {
     }
 
     public static void main(String[] args) {
-        new L1_016().test();
+        new L1_017().test();
     }
 }
