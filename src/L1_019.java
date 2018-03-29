@@ -1,10 +1,11 @@
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class Main {
+public class L1_019 extends TestAlgorithm {
 
+    @Override
     public void input(final InputStream stream) {
-        final Scanner scanner = new Scanner(stream);
+        Scanner scanner = new Scanner(stream);
         int full_a = scanner.nextInt();
         int full_b = scanner.nextInt();
         int remain_a = full_a;
@@ -40,11 +41,37 @@ public class Main {
         }
     }
 
+    @Override
+    public void solve() {
+    }
+
+    @Override
+    public void output() {
+
+    }
+
+    @Override
     public void run() {
         input(System.in);
+        // solve();
+        // output();
+    }
+
+    @Override
+    public String[] setTestCases() {
+        return new String[]{
+            "1 1\n" +
+            "6\n" +
+            "8 10 9 12\n" +
+            "5 10 5 10\n" +
+            "3 8 5 12\n" +
+            "12 18 1 13\n" +
+            "4 16 12 15\n" +
+            "15 1 1 16"
+        };
     }
 
     public static void main(String[] args) {
-        new Main().run();
+        new L1_019().test();
     }
 }

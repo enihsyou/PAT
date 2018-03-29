@@ -1,7 +1,10 @@
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
-public class Test2 extends TestAlgorithm {
+public class L1_018 extends TestAlgorithm {
+
+    private static final Pattern COMPILE = Pattern.compile(":");
 
     private int hour;
 
@@ -23,9 +26,9 @@ public class Test2 extends TestAlgorithm {
     public void input(final InputStream stream) {
         final Scanner scanner = new Scanner(stream);
         final String l = scanner.nextLine();
-        final String[] split = l.split(":");
-        hour = Integer.valueOf(split[0]);
-        minute = Integer.valueOf(split[1]);
+        final String[] split = COMPILE.split(l);
+        hour = Integer.parseInt(split[0]);
+        minute = Integer.parseInt(split[1]);
     }
 
     @Override
@@ -49,7 +52,7 @@ public class Test2 extends TestAlgorithm {
         for (int i = 0; i < time; i++) {
             builder.append("Dang");
         }
-        return builder.append('\n').toString();
+        return builder.toString();
     }
 
     @Override
@@ -65,7 +68,6 @@ public class Test2 extends TestAlgorithm {
     }
 
     public static void main(String[] args) {
-        new Test2().test();
-        new Test2().run();
+        new L1_018().test();
     }
 }
